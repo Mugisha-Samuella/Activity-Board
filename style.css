@@ -1,0 +1,260 @@
+/* General reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f7f7f7;
+    color: #333;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+  }
+  
+  /* Main container */
+  .dashboard-container {
+    max-width: 1000px;
+    width: 100%;
+    background-color: white;
+    border-radius: 15px;
+    padding: 40px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+  }
+  
+  .dashboard-container:hover {
+    transform: scale(1.02);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+  }
+  
+  /* Header */
+  .header {
+    text-align: center;
+    padding-bottom: 30px;
+    border-bottom: 2px solid #eaeaea;
+  }
+  
+  .header h1 {
+    font-size: 2.5rem;
+    color: #2c3e50;
+    line-height: 1.2;
+  }
+  
+  .header p {
+    font-size: 1.2rem;
+    color: #7f8c8d;
+    margin-top: 10px;
+  }
+  
+  /* Notification tabs */
+  .notification-tabs {
+    display: flex;
+    justify-content: space-around;
+    margin: 30px 0;
+  }
+  
+  .tab {
+    flex: 1;
+    text-align: center;
+    padding: 15px;
+    font-weight: 500;
+    background-color: #ecf0f1;
+    border-radius: 10px;
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.3s ease;
+    font-size: 1.1rem;
+    color: #34495e;
+  }
+  
+  .tab:hover {
+    background-color: #d5dbdb;
+    transform: translateY(-5px);
+  }
+  
+  .tab.active {
+    background-color: #3498db;
+    color: white;
+    transform: translateY(-10px);
+  }
+  
+  /* Dashboard grid */
+  .dashboard-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+    padding-top: 20px;
+  }
+  
+  .dashboard-item {
+    background-color: #ecf0f1;
+    padding: 30px;
+    border-radius: 15px;
+    text-align: center;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .dashboard-item h2 {
+    font-size: 1.8rem;
+    color: #2c3e50;
+    margin-bottom: 10px;
+  }
+  
+  .dashboard-item p {
+    font-size: 1rem;
+    color: #7f8c8d;
+  }
+  
+  .dashboard-item:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+  }
+  
+  .dashboard-item .view-more {
+    background-color: #3498db;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 25px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    margin-top: 20px;
+  }
+  
+  .dashboard-item .view-more:hover {
+    background-color: #2980b9;
+  }
+
+  .profile {
+    display: flex;
+    align-items: center;
+    margin-top: 20px;
+  }
+  
+  .profile-pic {
+    width: 50px; /* Adjust size as needed */
+    height: 50px; /* Adjust size as needed */
+    border-radius: 50%;
+    margin-right: 10px;
+  }
+  
+  .profile-info {
+    text-align: left;
+  }
+  
+  .profile-name {
+    font-size: 1.1rem;
+    color: #2c3e50;
+  }
+  
+  .settings-link {
+    font-size: 0.9rem;
+    color: #3498db;
+    text-decoration: none;
+  }
+  
+  .settings-link:hover {
+    text-decoration: underline;
+  }
+  
+  
+  /* Footer */
+  .footer {
+    text-align: center;
+    margin-top: 50px;
+    color: #7f8c8d;
+  }
+  
+  .footer p {
+    font-size: 0.9rem;
+  }
+  
+  /* Waving hand animation */
+  .wave {
+    display: inline-block;
+    animation: wave-animation 2s infinite;
+    transform-origin: 70% 70%;
+    font-size: 2.5rem; /* Adjust size if needed */
+  }
+  
+  @keyframes wave-animation {
+    0% { transform: rotate(0deg); }
+    10% { transform: rotate(14deg); }
+    20% { transform: rotate(-8deg); }
+    30% { transform: rotate(14deg); }
+    40% { transform: rotate(-4deg); }
+    50% { transform: rotate(10deg); }
+    60% { transform: rotate(0deg); }
+    100% { transform: rotate(0deg); }
+  }
+  
+  /* Media queries */
+  @media screen and (max-width: 1024px) {
+    .dashboard-container {
+      padding: 30px;
+    }
+  
+    .header h1 {
+      font-size: 2rem;
+    }
+  
+    .dashboard-grid {
+      grid-template-columns: 1fr;
+    }
+  
+    .tab {
+      font-size: 1rem;
+    }
+  }
+  
+  @media screen and (max-width: 768px) {
+    .dashboard-container {
+      padding: 20px;
+    }
+  
+    .header h1 {
+      font-size: 1.8rem;
+    }
+  
+    .dashboard-item h2 {
+      font-size: 1.6rem;
+    }
+  }
+  
+  @media screen and (max-width: 480px) {
+    body {
+      padding: 10px;
+    }
+  
+    .dashboard-container {
+      padding: 15px;
+    }
+  
+    .header h1 {
+      font-size: 1.5rem;
+    }
+  
+    .header p {
+      font-size: 1rem;
+    }
+  
+    .dashboard-item h2 {
+      font-size: 1.4rem;
+    }
+  
+    .dashboard-item p {
+      font-size: 0.9rem;
+    }
+  
+    .tab {
+      font-size: 0.9rem;
+      padding: 12px;
+    }
+  }
+  
